@@ -1,15 +1,15 @@
 pipeline {
     agent any
 
-    tools {
-        // Install the Maven version configured as "M3" and add it to the path.
-        maven "G8"
-    }
-
     stages {
-        stage('Build') {
+        stage('Clean') {
             steps {
-                sh "gradle clean classes"
+                sh "gradle clean"
+            }
+        }
+        stage('Assemble') {
+            steps {
+                sh "gradle assemble"
             }
         }
         stage('Test') {
@@ -17,10 +17,10 @@ pipeline {
                 sh "gradle test"
             }
         }
-//        stage('Deploy') {
-//            steps {
-//                sh "gradle test"
-//            }
-//        }
+        stage('Fat jar') {
+            steps {
+                sh "gradle bootJar"
+            }
+        }
     }
 }
