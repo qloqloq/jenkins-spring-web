@@ -26,5 +26,10 @@ pipeline {
                 sh "gradle bootJar"
             }
         }
+        stage('Deploy to EB') {
+            steps {
+                sh "eb deploy"
+            }
+        }
     }
 }
