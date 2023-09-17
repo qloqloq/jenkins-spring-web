@@ -8,6 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
+import static org.junit.jupiter.api.Assertions.fail;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -36,6 +37,11 @@ class JenkinsSpringWebApplicationTests {
 				.andDo(print())
 				.andExpect(status().isOk())
 				.andExpect(content().string("Hello Michael"));
+	}
+
+	@Test
+	void shouldFail() {
+		fail();
 	}
 
 }
