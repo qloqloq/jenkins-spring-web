@@ -39,9 +39,4 @@ class JenkinsSpringWebApplicationTests {
 				.andExpect(content().string("Hello Michael"));
 	}
 
-	@Test
-	void shouldFail() {
-		fail();
-	}
-
 }
