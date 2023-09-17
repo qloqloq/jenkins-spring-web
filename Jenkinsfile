@@ -17,10 +17,10 @@ pipeline {
                 sh "gradle test"
             }
         }
-        stage('Deploy') {
-            steps {
-                sh "gradle test"
-            }
-        }
+//        stage('Deploy') {
+//            steps {
+//                sh "gradle test"
+//            }
+//        }
     }
 }
